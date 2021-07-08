@@ -11251,7 +11251,7 @@ describe("romanizes special provisions", () => {
     ["앗타", "at-ta"],
     // ㅆ
     ["았아", "assa"],
-    ["앗타", "at-ta"],
+    ["았타", "at-ta"],
     // ㅇ
     ["앙아", "ang-a"],
     ["앙라", "angna"],

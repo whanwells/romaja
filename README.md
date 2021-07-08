@@ -1,4 +1,4 @@
-# [romaja](https://flamboyant-elion-839253.netlify.app/)
+# [romaja](https://romaja.me)
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/8a26d5d9-00de-43c3-bad6-0d62e350f37a/deploy-status)](https://app.netlify.com/sites/flamboyant-elion-839253/deploys)
 

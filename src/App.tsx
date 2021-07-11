@@ -17,7 +17,12 @@ const App: VFC = () => {
     <>
       <div className="text-center">
         <Label htmlFor="hangeul">Korean Text</Label>
-        <TextArea id="hangeul" value={source} onChange={onSourceChange} />
+        <TextArea
+          id="hangeul"
+          value={source}
+          autoFocus
+          onChange={onSourceChange}
+        />
       </div>
       <div className="text-center">
         <Label htmlFor="results">Results</Label>

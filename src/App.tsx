@@ -1,5 +1,6 @@
 import { useState } from "react";
 import type { ChangeEvent, VFC } from "react";
+import Label from "./Label";
 import romanize from "./romanize";
 import TextArea from "./TextArea";
 
@@ -14,27 +15,13 @@ const App: VFC = () => {
 
   return (
     <>
-      <div>
-        <label htmlFor="hangeul" className="sr-only">
-          Korean Text
-        </label>
-        <TextArea
-          id="hangeul"
-          value={source}
-          onChange={onSourceChange}
-          placeholder="Enter Korean text here..."
-        />
+      <div className="text-center">
+        <Label htmlFor="hangeul">Korean Text</Label>
+        <TextArea id="hangeul" value={source} onChange={onSourceChange} />
       </div>
-      <div>
-        <label htmlFor="romanization" className="sr-only">
-          Romanization
-        </label>
-        <TextArea
-          id="romanization"
-          value={result}
-          readOnly
-          placeholder="Get romanization here!"
-        />
+      <div className="text-center">
+        <Label htmlFor="results">Results</Label>
+        <TextArea id="results" value={result} readOnly />
       </div>
     </>
   );

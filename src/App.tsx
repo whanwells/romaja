@@ -26,7 +26,7 @@ const App: VFC = () => {
       </div>
       <div className="text-center">
         <Label htmlFor="results">Results</Label>
-        <TextArea id="results" value={result} readOnly />
+        <TextArea id="results" value={result} readOnly tabIndex={-1} />
       </div>
     </>
   );

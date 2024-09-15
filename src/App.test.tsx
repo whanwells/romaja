@@ -9,5 +9,5 @@ test("romanizes Korean text", () => {
     target: { value: "하이" },
   });
 
-  expect(getByLabelText("Romanization")).toHaveTextContent("hai");
+  expect(getByLabelText("Results")).toHaveTextContent("hai");
 });

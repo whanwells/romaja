@@ -1,3 +1,4 @@
+import { describe, test, expect } from "vitest";
 import romanize from "./romanize";
 
 test("ignores non-Korean characters", () => {

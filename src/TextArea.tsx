@@ -7,7 +7,7 @@ const TextArea: VFC<TextAreaProps> = (props) => {
   return (
     <textarea
       {...props}
-      className="h-full w-full p-4 border border-gray-300 rounded"
+      className="h-full w-full rounded border border-gray-300 p-4"
     />
   );
 };

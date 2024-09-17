@@ -4,7 +4,7 @@ type LabelAttributes = LabelHTMLAttributes<HTMLLabelElement>;
 type LabelProps = Omit<LabelAttributes, "className">;
 
 const Label: FC<LabelProps> = (props) => {
-  return <label {...props} className="font-medium text-sm text-gray-600" />;
+  return <label {...props} className="text-sm font-medium text-gray-600" />;
 };
 
 export default Label;

@@ -1,14 +1,26 @@
 import eslint from "@eslint/js";
 import eslintConfigPrettier from "eslint-config-prettier";
-import reactPlugin from "eslint-plugin-react";
-import tseslint from "typescript-eslint";
+import eslintPluginVue from "eslint-plugin-vue";
+import globals from "globals";
+import typescriptEslint from "typescript-eslint";
 
-export default tseslint.config(
+export default typescriptEslint.config(
+  { ignores: ["*.d.ts", "**/coverage", "**/dist"] },
   {
-    ignores: ["coverage", "dist"],
+    extends: [
+      eslint.configs.recommended,
+      ...typescriptEslint.configs.recommended,
+      ...eslintPluginVue.configs["flat/recommended"],
+    ],
+    files: ["**/*.{ts,vue}"],
+    languageOptions: {
+      ecmaVersion: "latest",
+      sourceType: "module",
+      globals: globals.browser,
+      parserOptions: {
+        parser: typescriptEslint.parser,
+      },
+    },
   },
-  eslint.configs.recommended,
-  ...tseslint.configs.recommended,
-  reactPlugin.configs.flat["jsx-runtime"],
   eslintConfigPrettier,
 );

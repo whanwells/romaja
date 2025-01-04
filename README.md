@@ -4,7 +4,6 @@
 
 Romanizes Korean text.
 
-Built with [TypeScript](https://www.typescriptlang.org), [React](https://reactjs.org),
-[Tailwind CSS](https://tailwindcss.com), and [Vite](https://vitejs.dev/).
+Built with [TypeScript](https://www.typescriptlang.org), [Vue](https://vuejs.org/), [Tailwind CSS](https://tailwindcss.com), and [Vite](https://vitejs.dev/).
 
 To run locally, `npm install`, then `npm run dev`, then open http://localhost:5173.

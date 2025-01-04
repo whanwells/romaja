@@ -6,5 +6,7 @@ export default defineConfig({
   plugins: [vue()],
   test: {
     environment: "happy-dom",
+    // https://testing-library.com/docs/vue-testing-library/setup#vitest
+    globals: true,
   },
 });

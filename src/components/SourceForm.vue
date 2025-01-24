@@ -3,8 +3,9 @@
     <textarea
       ref="textarea"
       v-model.trim="text"
-      class="textarea textarea-bordered min-h-64 w-full max-w-lg text-base"
+      class="textarea textarea-bordered min-h-64 w-full max-w-lg text-base placeholder:text-gray-500"
       :class="{ 'textarea-error': error }"
+      placeholder='Enter or paste Korean text (한글) here and click "Convert"'
     ></textarea>
     <div class="mt-4">
       <button class="btn btn-neutral mr-4 w-24" @click.prevent="onClearClick">

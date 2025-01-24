@@ -1,11 +1,7 @@
 <template>
   <div class="flex min-h-screen min-w-full items-center justify-center">
     <div class="grow text-center">
-      <h1 class="text-5xl font-bold">Romaja Me!</h1>
-      <p class="my-4">
-        Enter or paste the 한글 (han-geul)<br />
-        you'd like to romanize below to get started.
-      </p>
+      <h1 class="mb-4 text-4xl font-bold text-primary">romaja.me</h1>
       <SourceForm v-model:text="source.text" @submit="onSubmit" />
     </div>
   </div>

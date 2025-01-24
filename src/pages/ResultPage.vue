@@ -1,5 +1,5 @@
 <template>
-  <div class="flex items-center justify-center p-8">
+  <div class="flex items-center justify-center p-4">
     <ul>
       <EntryItem
         v-for="(entry, index) in source.entries"

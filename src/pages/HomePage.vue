@@ -1,8 +1,8 @@
 <template>
-  <div class="flex min-h-screen min-w-full items-center justify-center p-4">
+  <div class="flex min-h-screen min-w-full items-center justify-center">
     <div class="grow text-center">
       <h1 class="text-5xl font-bold">Romaja Me!</h1>
-      <p class="py-4">
+      <p class="my-4">
         Enter or paste the 한글 (han-geul)<br />
         you'd like to romanize below to get started.
       </p>

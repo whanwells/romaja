@@ -1,5 +1,5 @@
 <template>
-  <li class="w-full max-w-lg pb-4">
+  <li class="mb-4 w-full max-w-lg">
     <p class="text-gray-500">{{ source }}</p>
     <p>{{ result }}</p>
   </li>

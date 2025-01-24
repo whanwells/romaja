@@ -6,7 +6,7 @@
       class="textarea textarea-bordered min-h-64 w-full max-w-lg text-base"
       :class="{ 'textarea-error': error }"
     ></textarea>
-    <div class="pt-4">
+    <div class="mt-4">
       <button class="btn btn-primary">Let's Go!</button>
     </div>
   </form>

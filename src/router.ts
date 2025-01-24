@@ -13,4 +13,8 @@ export const router = createRouter({
       component: () => import("./pages/ResultPage.vue"),
     },
   ],
+  scrollBehavior() {
+    // always scroll to top of page
+    return { top: 0 };
+  },
 });

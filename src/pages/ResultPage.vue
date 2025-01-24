@@ -1,7 +1,7 @@
 <template>
   <div class="flex items-center justify-center p-4">
     <ul>
-      <EntryItem
+      <EntryListItem
         v-for="(entry, index) in source.entries"
         :key="index + entry"
         :source="entry"
@@ -12,7 +12,7 @@
 
 <script setup lang="ts">
 import { useRouter } from "vue-router";
-import EntryItem from "../components/EntryListItem.vue";
+import EntryListItem from "../components/EntryListItem.vue";
 import { useSourceStore } from "../stores/source";
 
 const router = useRouter();

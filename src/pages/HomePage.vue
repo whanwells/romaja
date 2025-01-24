@@ -1,5 +1,5 @@
 <template>
-  <div class="flex h-screen w-screen items-center justify-center">
+  <div class="flex min-h-screen min-w-full items-center justify-center p-4">
     <div class="grow text-center">
       <h1 class="text-5xl font-bold">Romaja Me!</h1>
       <p class="py-4">

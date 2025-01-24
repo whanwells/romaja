@@ -3,7 +3,6 @@
     <textarea
       ref="textarea"
       v-model.trim="text"
-      :autofocus="true"
       class="textarea textarea-bordered min-h-64 w-full max-w-lg text-base"
       :class="{ 'textarea-error': error }"
     ></textarea>

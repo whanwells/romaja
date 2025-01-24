@@ -7,7 +7,10 @@
       :class="{ 'textarea-error': error }"
     ></textarea>
     <div class="mt-4">
-      <button class="btn btn-primary">Let's Go!</button>
+      <button class="btn btn-neutral mr-4 w-24" @click.prevent="onClearClick">
+        Clear
+      </button>
+      <button class="btn btn-primary w-24">Convert</button>
     </div>
   </form>
 </template>
@@ -34,5 +37,10 @@ function onSubmit() {
     error.value = false;
     emit("submit");
   }
+}
+
+function onClearClick() {
+  text.value = "";
+  textarea.value?.focus();
 }
 </script>

@@ -1,32 +1,79 @@
+// consonants
+const GIYEOK = 12593;
+const SSANG_GIYEOK = 12594;
+const GIYEOK_SIOT = 12595;
+const NIEUN = 12596;
+const NIEUN_JIEUT = 12597;
+const NIEUN_HIEUT = 12598;
+const DIGEUT = 12599;
+const SSANG_DIGEUT = 12600;
+const RIEUL = 12601;
+const MIEUM = 12609;
+const BIEUP = 12610;
+const SSANG_BIEUP = 12611;
+const SIOT = 12613;
+const SSANG_SIOT = 12614;
+const IEUNG = 12615;
+const JIEUT = 12616;
+const SSANG_JIEUT = 12617;
+const CHIEUT = 12618;
+const KIEUK = 12619;
+const TIEUT = 12620;
+const PIEUP = 12621;
+const HIEUT = 12622;
+
+// vowels
+const A = 12623;
+const AE = 12624;
+const YA = 12625;
+const YAE = 12626;
+const EO = 12627;
+const E = 12628;
+const YEO = 12629;
+const YE = 12630;
+const O = 12631;
+const WA = 12632;
+const WAE = 12633;
+const OE = 12634;
+const YO = 12635;
+const U = 12636;
+const WO = 12637;
+const WE = 12638;
+const WI = 12639;
+const YU = 12640;
+const EU = 12641;
+const UI = 12642;
+const I = 12643;
+
 // syllable code ranges by consonant
 const GIYEOK_BEGIN = 44032;
 const GIYEOK_END = 44619;
-const SSANGGIYEOK_BEGIN = 44620;
-const SSANGGIYEOK_END = 45207;
+const SSANG_GIYEOK_BEGIN = 44620;
+const SSANG_GIYEOK_END = 45207;
 const NIEUN_BEGIN = 45208;
 const NIEUN_END = 45795;
 const DIGEUT_BEGIN = 45796;
 const DIGEUT_END = 46383;
-const SSANGDIGEUT_BEGIN = 46384;
-const SSANGDIGEUT_END = 46971;
+const SSANG_DIGEUT_BEGIN = 46384;
+const SSANG_DIGEUT_END = 46971;
 const RIEUL_BEGIN = 46972;
 const RIEUL_END = 47559;
 const MIEUM_BEGIN = 47560;
 const MIEUM_END = 48147;
 const BIEUP_BEGIN = 48148;
 const BIEUP_END = 48735;
-const SSANGBIEUP_BEGIN = 48736;
-const SSANGBIEUP_END = 49323;
+const SSANG_BIEUP_BEGIN = 48736;
+const SSANG_BIEUP_END = 49323;
 const SIOT_BEGIN = 49324;
 const SIOT_END = 49911;
-const SSANGSIOT_BEGIN = 49912;
-const SSANGSIOT_END = 50499;
+const SSANG_SIOT_BEGIN = 49912;
+const SSANG_SIOT_END = 50499;
 const IEUNG_BEGIN = 50500;
 const IEUNG_END = 51087;
 const JIEUT_BEGIN = 51088;
 const JIEUT_END = 51675;
-const SSANGJIEUT_BEGIN = 51676;
-const SSANGJIEUT_END = 52263;
+const SSANG_JIEUT_BEGIN = 51676;
+const SSANG_JIEUT_END = 52263;
 const CHIEUT_BEGIN = 52264;
 const CHIEUT_END = 52851;
 const KIEUK_BEGIN = 52852;
@@ -83,7 +130,7 @@ const I_BEGIN = 560;
 
 // batchim indices
 const BATCHIM_GIYEOK = 1;
-const BATCHIM_SSANGGIYEOK = 2;
+const BATCHIM_SSANG_GIYEOK = 2;
 const BATCHIM_GIYEOK_SIOT = 3;
 const BATCHIM_NIEUN = 4;
 const BATCHIM_NIEUN_JIEUT = 5;
@@ -101,7 +148,7 @@ const BATCHIM_MIEUM = 16;
 const BATCHIM_BIEUP = 17;
 const BATCHIM_BIEUP_SIOT = 18;
 const BATCHIM_SIOT = 19;
-const BATCHIM_SSANGSIOT = 20;
+const BATCHIM_SSANG_SIOT = 20;
 const BATCHIM_IEUNG = 21;
 const BATCHIM_JIEUT = 22;
 const BATCHIM_CHIEUT = 23;
@@ -110,7 +157,7 @@ const BATCHIM_TIEUT = 25;
 const BATCHIM_PIEUP = 26;
 const BATCHIM_HIEUT = 27;
 
-export default function romanize(source: string): string {
+export function romanize(source: string): string {
   const results = [];
   let previousBatchim = 0;
 
@@ -118,8 +165,141 @@ export default function romanize(source: string): string {
     const code = source.charCodeAt(i);
     const next = source.charCodeAt(i + 1);
 
-    // is character a Hangul syllable?
-    if (code >= GIYEOK_BEGIN && code <= HIEUT_END) {
+    if (code >= GIYEOK && code <= I) {
+      // is the character a Hangul character?
+      switch (code) {
+        case GIYEOK:
+          results.push("g");
+          break;
+        case SSANG_GIYEOK:
+          results.push("kk");
+          break;
+        case GIYEOK_SIOT:
+          results.push("gs");
+          break;
+        case NIEUN:
+          results.push("n");
+          break;
+        case NIEUN_JIEUT:
+          results.push("nt");
+          break;
+        case NIEUN_HIEUT:
+          results.push("nh");
+          break;
+        case DIGEUT:
+          results.push("d");
+          break;
+        case SSANG_DIGEUT:
+          results.push("tt");
+          break;
+        case RIEUL:
+          results.push("r");
+          break;
+        case MIEUM:
+          results.push("m");
+          break;
+        case BIEUP:
+          results.push("b");
+          break;
+        case SSANG_BIEUP:
+          results.push("pp");
+          break;
+        case SIOT:
+          results.push("s");
+          break;
+        case SSANG_SIOT:
+          results.push("ss");
+          break;
+        case IEUNG:
+          results.push("-");
+          break;
+        case JIEUT:
+          results.push("j");
+          break;
+        case SSANG_JIEUT:
+          results.push("jj");
+          break;
+        case CHIEUT:
+          results.push("ch");
+          break;
+        case KIEUK:
+          results.push("k");
+          break;
+        case TIEUT:
+          results.push("t");
+          break;
+        case PIEUP:
+          results.push("p");
+          break;
+        case HIEUT:
+          results.push("h");
+          break;
+        case A:
+          results.push("a");
+          break;
+        case AE:
+          results.push("ae");
+          break;
+        case YA:
+          results.push("ya");
+          break;
+        case YAE:
+          results.push("yae");
+          break;
+        case EO:
+          results.push("eo");
+          break;
+        case E:
+          results.push("e");
+          break;
+        case YEO:
+          results.push("yeo");
+          break;
+        case YE:
+          results.push("ye");
+          break;
+        case O:
+          results.push("o");
+          break;
+        case WA:
+          results.push("wa");
+          break;
+        case WAE:
+          results.push("wae");
+          break;
+        case OE:
+          results.push("oe");
+          break;
+        case YO:
+          results.push("yo");
+          break;
+        case U:
+          results.push("u");
+          break;
+        case WO:
+          results.push("wo");
+          break;
+        case WE:
+          results.push("we");
+          break;
+        case WI:
+          results.push("wi");
+          break;
+        case YU:
+          results.push("yu");
+          break;
+        case EU:
+          results.push("eu");
+          break;
+        case UI:
+          results.push("ui");
+          break;
+        case I:
+          results.push("i");
+          break;
+      }
+    } else if (code >= GIYEOK_BEGIN && code <= HIEUT_END) {
+      // is character a Hangul syllable?
       let vowel: number;
       let batchim: number;
 
@@ -128,10 +308,10 @@ export default function romanize(source: string): string {
         // ㄱ
         results.push("g");
         vowel = code - GIYEOK_BEGIN;
-      } else if (code <= SSANGGIYEOK_END) {
+      } else if (code <= SSANG_GIYEOK_END) {
         // ㄲ
         results.push("kk");
-        vowel = code - SSANGGIYEOK_BEGIN;
+        vowel = code - SSANG_GIYEOK_BEGIN;
       } else if (code <= NIEUN_END) {
         // ㄴ
         if (
@@ -160,10 +340,10 @@ export default function romanize(source: string): string {
         // ㄷ
         results.push("d");
         vowel = code - DIGEUT_BEGIN;
-      } else if (code <= SSANGDIGEUT_END) {
+      } else if (code <= SSANG_DIGEUT_END) {
         // ㄸ
         results.push("tt");
-        vowel = code - SSANGDIGEUT_BEGIN;
+        vowel = code - SSANG_DIGEUT_BEGIN;
       } else if (code <= RIEUL_END) {
         // ㄹ
         if (
@@ -218,18 +398,18 @@ export default function romanize(source: string): string {
         // ㅂ
         results.push("b");
         vowel = code - BIEUP_BEGIN;
-      } else if (code <= SSANGBIEUP_END) {
+      } else if (code <= SSANG_BIEUP_END) {
         // ㅃ
         results.push("pp");
-        vowel = code - SSANGBIEUP_BEGIN;
+        vowel = code - SSANG_BIEUP_BEGIN;
       } else if (code <= SIOT_END) {
         // ㅅ
         results.push("s");
         vowel = code - SIOT_BEGIN;
-      } else if (code <= SSANGSIOT_END) {
+      } else if (code <= SSANG_SIOT_END) {
         // ㅆ
         results.push("ss");
-        vowel = code - SSANGSIOT_BEGIN;
+        vowel = code - SSANG_SIOT_BEGIN;
       } else if (code <= IEUNG_END) {
         // ㅇ
         if (previousBatchim === BATCHIM_IEUNG) {
@@ -240,9 +420,9 @@ export default function romanize(source: string): string {
         // ㅈ
         results.push("j");
         vowel = code - JIEUT_BEGIN;
-      } else if (code <= SSANGJIEUT_END) {
+      } else if (code <= SSANG_JIEUT_END) {
         results.push("jj");
-        vowel = code - SSANGJIEUT_BEGIN;
+        vowel = code - SSANG_JIEUT_BEGIN;
       } else if (code <= CHIEUT_END) {
         // ㅊ
         results.push("ch");
@@ -256,7 +436,7 @@ export default function romanize(source: string): string {
         if (
           previousBatchim === BATCHIM_DIGEUT ||
           previousBatchim === BATCHIM_SIOT ||
-          previousBatchim === BATCHIM_SSANGSIOT ||
+          previousBatchim === BATCHIM_SSANG_SIOT ||
           previousBatchim === BATCHIM_JIEUT ||
           previousBatchim === BATCHIM_CHIEUT ||
           previousBatchim === BATCHIM_TIEUT
@@ -414,7 +594,7 @@ export default function romanize(source: string): string {
             results.push("k");
           }
           break;
-        case BATCHIM_SSANGGIYEOK:
+        case BATCHIM_SSANG_GIYEOK:
           results.push("k");
           break;
         case BATCHIM_GIYEOK_SIOT:
@@ -522,7 +702,7 @@ export default function romanize(source: string): string {
             results.push("t");
           }
           break;
-        case BATCHIM_SSANGSIOT:
+        case BATCHIM_SSANG_SIOT:
           if (next >= IEUNG_BEGIN && next <= IEUNG_END) {
             results.push("ss");
           } else {

@@ -1,8 +1,56 @@
 import { describe, test, expect } from "vitest";
-import romanize from "./romanize";
+import { romanize } from "./romanize";
 
 test("ignores non-Korean characters", () => {
   expect(romanize("abc 123!")).toBe("abc 123!");
+});
+
+describe("romanizes characters", () => {
+  test.each([
+    ["ㄱ", "g"],
+    ["ㄲ", "kk"],
+    ["ㄳ", "gs"],
+    ["ㄴ", "n"],
+    ["ㄷ", "d"],
+    ["ㄸ", "tt"],
+    ["ㄹ", "r"],
+    ["ㅁ", "m"],
+    ["ㅂ", "b"],
+    ["ㅃ", "pp"],
+    ["ㅅ", "s"],
+    ["ㅆ", "ss"],
+    ["ㅇ", "-"],
+    ["ㅈ", "j"],
+    ["ㅉ", "jj"],
+    ["ㅊ", "ch"],
+    ["ㅋ", "k"],
+    ["ㅌ", "t"],
+    ["ㅍ", "p"],
+    ["ㅎ", "h"],
+    ["ㅏ", "a"],
+    ["ㅐ", "ae"],
+    ["ㅑ", "ya"],
+    ["ㅒ", "yae"],
+    ["ㅓ", "eo"],
+    ["ㅔ", "e"],
+    ["ㅕ", "yeo"],
+    ["ㅖ", "ye"],
+    ["ㅗ", "o"],
+    ["ㅘ", "wa"],
+    ["ㅙ", "wae"],
+    ["ㅚ", "oe"],
+    ["ㅛ", "yo"],
+    ["ㅜ", "u"],
+    ["ㅝ", "wo"],
+    ["ㅞ", "we"],
+    ["ㅟ", "wi"],
+    ["ㅠ", "yu"],
+    ["ㅡ", "eu"],
+    ["ㅢ", "ui"],
+    ["ㅣ", "i"],
+  ])("'%s' => '%s'", (source, expected) => {
+    expect(romanize(source)).toEqual(expected);
+  });
 });
 
 describe("romanizes syllables", () => {

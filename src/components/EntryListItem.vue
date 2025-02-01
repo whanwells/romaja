@@ -7,7 +7,7 @@
 
 <script setup lang="ts">
 import { computed } from "vue";
-import romanize from "../romanize";
+import { romanize } from "../romanize";
 
 const props = defineProps<{
   source: string;
